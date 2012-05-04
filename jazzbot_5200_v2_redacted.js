@@ -23,12 +23,6 @@
 var Bot = require('ttapi'); // Turntable.fm
 var LastFmNode = require('lastfm').LastFmNode; // LastFM API
 
-//var Db = require('mongodb').Db;
-//var Connection = require('mongodb').Connection;
-//var Server = require('mongodb').Server;
-//var BSON = require('mongodb').BSON;
-//var ObjectID = require('mongodb').ObjectID;
-
 // these are identified on Turntable using Alain's bookmarklet: http://alaingilbert.github.com/Turntable-API/bookmarklet.html
 var TTAUTHID = 'auth+live+xxxxxxxxxxxxxxxxxxxxxxxxxx';
 var TTUSERID = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -74,6 +68,7 @@ var lastfm = new LastFmNode({
 	
 });
 
+//  uncomment this to see the matrix
 //bot.debug = true;
 
 // event handlers!  yay!
@@ -300,7 +295,7 @@ bot.on('speak', function (data) {
 		// userID restricted commands *********************************************************************************************************
 		// commands below this point need to test for permitted to maintain security, but may also have an else clause for smartass comebacks
 		
-		/*// Respond to get up
+		/*// Respond to get up  [this code is no longer privileged]
 		if ( ((text.indexOf("get up") != -1 || text.indexOf("on deck") != -1) && data.text.indexOf("jazzbot") != -1) || (data.text.match(/^\/up$/))) {
 			
 			if(permitted){
@@ -508,7 +503,7 @@ bot.on('speak', function (data) {
 bot.on('pmmed', function(data){
 
 	// check for alex or sb's speakerid
-	if(data.senderid == '4defa9eb4fe7d0012c025724' || data.senderid == '4e09dc63a3f7517d140c300d'){
+	if(data.senderid == 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx' || data.senderid == 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'){
 	
 		permitted = true;	
 	
